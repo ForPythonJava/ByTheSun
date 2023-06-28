@@ -1,0 +1,39 @@
+{% extends 'ADMIN/adminBase.html' %}
+{% block header %}
+
+<!-- forms-17 -->
+<section class="forms-17">
+    <div id="forms-17_sur">
+        <div class="wrapper">
+            <!-- <div class="logo text-center">
+                <a class="brand-logo" href="#"><span><i class="fa-sharp fa-regular fa-b fa-beat-fade fa-2xl"
+                            style="color: #ff0000;"></i></span>y
+                    The Sun</span></a>
+                
+            </div> -->
+            <div class="forms-17-top">
+                <div class="forms-17-form">
+                    <div class="form-17-tp">
+                        <center>
+                            <h6>Add Category</h6>
+                        </center>
+                        <form action="#" method="post" class="signin-form">
+                            {% csrf_token %}
+                            <div class="form-input">
+                                <input type="text" name="category" placeholder="Category.." required />
+                            </div>
+                            <center> <button class="btn" type="submit">Add</button></center>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- forms-17 -->
+<script>(function () { var js = "window['__CF$cv$params']={r:'7da40681881cf4a8',m:'Wi_exOnX0Jr3LmSixmrJ9jSyhozR7TSwKRu0c.K.vL8-1687264251-0-AftYWDYVd0v1K2u5VkvzjsQaPw7PqwrvbQqZmtfrIzFw'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='D:/@MIDHUN/PROJECTS/PYTHON/TEST/ByTheSun/ByTheSun/static/assets/js/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);"; var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.nonce = ''; _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
+
+
+{% endblock %}
