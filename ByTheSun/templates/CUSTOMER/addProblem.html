@@ -1,0 +1,68 @@
+{% extends "CUSTOMER/customerBase.html" %}
+{% block header %}
+{% load static %}
+
+
+<!-- Alert message -->
+{% if messages %}
+{% for i in messages %}
+<script>
+    alert("{{i}}");
+</script>
+{% endfor %}
+{% endif %}
+<!-- Alert Message End -->
+
+
+<style>
+    #feedback {
+        background: #f9f9f9;
+        border: 2px solid #e2e1e1;
+        padding: 12px 20px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #333;
+        width: 100%;
+        border-radius: 35px;
+    }
+
+    #feedback:focus {
+        outline-color: #e2e1e1;
+    }
+
+
+    .forms-29 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-main-cont-29 {
+        text-align: center;
+        width: 100%;
+        /* Adjust this value as needed */
+        margin: 0 auto;
+    }
+</style>
+
+<section class="forms-29">
+    <div class="form-29">
+        <div class="wrapper">
+            <h3 class="heading">Add Problem</h3>
+            <div class="form-main-cont-29" style="text-align: center;width: 2000px;align-items: center;">
+                <form method="post" class="forms-29-form">
+                    {% csrf_token %}
+                    <textarea name="problem" id="feedback" cols="30" required rows="5"
+                        placeholder="Elaborate Your Problem"></textarea><br>
+                    <input type="text" min="{{curr_date}}" onfocus="(this.type='date')" onblur="(this.type='text')"
+                        placeholder="Select Date" required name="date" id="">
+                    <br>
+                    <button type="submit" class="btn">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

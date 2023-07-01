@@ -50,6 +50,37 @@ class Product(models.Model):
     description = models.CharField(max_length=300)
     image = models.ImageField(upload_to="image")
     price = models.IntegerField()
-    
+
     def __str__(self):
         return self.name
+
+
+class Cart(models.Model):
+    uid = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    pid = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    price=models.IntegerField()
+    status = models.CharField(max_length=100, default="InCart")
+
+
+class Feedback(models.Model):
+    uid=models.ForeignKey(Customer,on_delete=models.CASCADE)
+    title=models.CharField(max_length=100)
+    feedback=models.CharField(max_length=300)
+    date = models.DateField(auto_now_add=True)
+    status=models.CharField(max_length=100,default="Sent")
+
+
+class Booking(models.Model):
+    uid=models.ForeignKey(Customer,on_delete=models.CASCADE)
+    shopid=models.ForeignKey(Shop,on_delete=models.CASCADE)
+    problem=models.CharField(max_length=300)
+    date=models.DateField()
+    status=models.CharField(max_length=100,default="Pending")
+    
+    
+class SellingRequest(models.Model):
+    uid=models.ForeignKey(Customer,on_delete=models.CASCADE)
+    unit=models.IntegerField()
+    status=models.CharField(max_length=100,default="Pending")
+    date=models.DateField(auto_now=True)

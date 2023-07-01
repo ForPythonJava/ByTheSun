@@ -1,0 +1,64 @@
+{% extends "CUSTOMER/customerBase.html" %}
+{% block header %}
+{% load static %}
+
+
+<!-- Alert message -->
+{% if messages %}
+{% for i in messages %}
+<script>
+    alert("{{i}}");
+</script>
+{% endfor %}
+{% endif %}
+<!-- Alert Message End -->
+
+
+<style>
+    #feedback {
+        background: #f9f9f9;
+        border: 2px solid #e2e1e1;
+        padding: 12px 20px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #333;
+        width: 100%;
+        border-radius: 35px;
+    }
+
+    #feedback:focus {
+        outline-color: #e2e1e1;
+    }
+
+
+    .forms-29 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-main-cont-29 {
+        text-align: center;
+        width: 100%;
+        /* Adjust this value as needed */
+        margin: 0 auto;
+    }
+</style>
+
+<section class="forms-29">
+    <div class="form-29">
+        <div class="wrapper">
+            <h3 class="heading">Add Selling Request</h3>
+            <div class="form-main-cont-29" style="text-align: center;align-items: center;">
+                <form method="post" class="forms-29-form">
+                    {% csrf_token %}
+                    <input type="text" name="unit" placeholder="Enter Unit" required>
+                    <br>
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

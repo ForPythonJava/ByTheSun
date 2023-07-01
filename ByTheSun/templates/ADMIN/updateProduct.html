@@ -62,7 +62,6 @@
 
 {% endif %}
 <!-- Alert Message End -->
-
 <!-- forms-17 -->
 <section class="forms-17">
     <div id="forms-17_sur">
@@ -77,34 +76,38 @@
                             {% csrf_token %}
                             <div class="image-upload text-center" style="margin-bottom: 30px">
                                 <label for="file-input">
-                                    <img id="img" src="/static/assets/images/upload.png" alt="Upload Image"
+                                    <img id="img" src="/static/media/{{pdtData.image}}" alt="Upload Image"
                                         style="margin: auto" />
                                 </label>
-                                <input id="file-input" onchange="readURL(this)" required="" name="imgfile"
-                                    type="file" />
+                                <input id="file-input" onchange="readURL(this)" name="imgfile" type="file" />
                             </div>
                             <div class="form-input">
                                 <select class="form-select" name="category" required>
-                                    <option id="w3lName" selected disabled>--Select Category-- </option>
+                                    <option id="w3lName" selected>{{pdtData.category}}</option>
                                     {% for i in categories %}
+                                    {% if i.category != pdtData.category %}
                                     <option value="{{i.category}}">{{i.category}}</option>
+                                    {% endif %}
                                     {% endfor %}
                                 </select>
                             </div>
                             <div class="form-input">
-                                <input type="text" name="name" pattern="[a-z A-Z]+" placeholder="Name.." required />
+                                <input type="text" name="name" value="{{pdtData.name}}" pattern="[a-z A-Z]+"
+                                    placeholder="Name.." required />
                             </div>
                             <div class="form-input">
-                                <input type="text" name="qty" placeholder="Quantity.." pattern="[0-9]+" required />
+                                <input type="text" name="qty" value="{{pdtData.quantity}}" placeholder="Quantity.."
+                                    pattern="[0-9]+" required />
                             </div>
                             <div class="form-input">
-                                <input type="text" name="price" placeholder="Price.." pattern="[0-9]+" required />
+                                <input type="text" name="price" value="{{pdtData.price}}" placeholder="Price.."
+                                    pattern="[0-9]+" required />
                             </div>
                             <div class="form-input">
                                 <textarea name="desc" id="gender" cols="30" rows="3" required
-                                    placeholder="Description"></textarea>
+                                    placeholder="Description">{{pdtData.description}}</textarea>
                             </div>
-                            <center> <button class="btn" type="submit" onclick="validateForm()">Add</button></center>
+                            <center> <button class="btn" type="submit">UPDATE</button></center>
                         </form>
                     </div>
                 </div>
@@ -129,7 +132,7 @@
     }
 </script>
 
-<script>
+<!-- <script>
     function validateForm() {
         var fileInput = document.getElementById("file-input");
         if (fileInput.files.length === 0) {
@@ -138,6 +141,6 @@
         }
         return true;
     }
-</script>
+</script> -->
 
 {% endblock %}

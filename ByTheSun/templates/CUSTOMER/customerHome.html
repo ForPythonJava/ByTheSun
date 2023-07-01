@@ -9,11 +9,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Solar Service Industrial Category Responsive Web template | Home : W3layouts</title>
+    <title>ByTheSun</title>
     <link rel="stylesheet" href="{% static 'assets/css/style-freedom.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Proza+Libre:400,500,700&amp;display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a7ef121b35.js" crossorigin="anonymous"></script>
+    <style>
+        #a {
+            text-decoration: none;
+        }
+    </style>
+
+    <!-- Alert message -->
+    {% if messages %}
+    {% for i in messages %}
+    <script>
+        alert("{{i}}");
+    </script>
+    {% endfor %}
+    {% endif %}
+    <!-- Alert Message End -->
 
 </head>
 
@@ -223,11 +238,12 @@ RIGHT SIDEBAR TOGGLE SECTION
                 <div class="wrapper">
                     <div class="d-grid nav-mobile-block header-align">
                         <div class="logo">
-                            <a class="brand-logo" href="#"><span><i class="fa-sharp fa-solid fa-b fa-beat-fade fa-2xl"
+                            <a id="a" class="brand-logo" href="#"><span><i
+                                        class="fa-sharp fa-solid fa-b fa-beat-fade fa-2xl"
                                         style="color: #ff0000;"></i></span>y
                                 The Sun</span></a>
                             <!-- if logo is image enable this   
-                  <a class="brand-logo" href="#index.html">
+                  <a id="a" class="brand-logo" href="#index.html">
                       <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
                   </a> -->
                         </div>
@@ -237,67 +253,49 @@ RIGHT SIDEBAR TOGGLE SECTION
                             <label for="drop" class="toggle">Menu</label>
                             <input type="checkbox" id="drop">
                             <ul class="menu">
-                                <li><a href="/index">Home</a></li>
-                                <li><a href="/login">Sign In</a></li>
-                                <li><a href="/signup">SignUp</a></li>
-                                <li>
-                                    <!-- sumenu Drop Down -->
-                                    <label for="drop-3" class="toggle toogle-3">Pages <span class="angle-dropdown"
-                                            aria-hidden="true"></span>
-                                    </label>
-                                    <a href="#pages">Pages <span class="angle-dropdown" aria-hidden="true"></span></a>
-                                    <input type="checkbox" id="drop-3">
-
-                                    <ul class="first-dropdown">
-                                        <li><a href="team.html" class="drop-text">Our Team</a></li>
-                                        <li><a href="team-single.html" class="drop-text">Team single</a></li>
-                                        <li><a href="portfolio.html" class="drop-text">Projects</a></li>
-                                        <li><a href="pricing.html" class="drop-text">Pricing plans</a></li>
-                                        <li><a href="error.html" class="drop-text">404</a></li>
-                                        <li><a href="coming-soon.html" class="drop-text">Coming soon</a></li>
-                                        <li><a href="login.html" class="drop-text">Login</a></li>
-                                        <li><a href="signup.html" class="drop-text">Register</a></li>
-                                        <li><a href="search-results.html" class="drop-text">Search results</a></li>
-                                        <li><a href="timeline.html" class="drop-text">Timeline</a></li>
-                                        <li><a href="faq.html" class="drop-text">Faq</a></li>
-                                        <li><a href="email-template.html" class="drop-text">Email Template</a></li>
-                                        <li><a href="landing.html" class="drop-text">Landing page</a></li>
-                                    </ul>
-                                </li>
+                                <li><a id="a" href="index.html">Home</a></li>
                                 <li>
                                     <!-- First Tier Drop Down -->
-                                    <label for="drop-4" class="toggle toogle-4">Blog <span class="angle-dropdown"
+                                    <label for="drop-4" class="toggle toogle-4">View <span class="angle-dropdown"
                                             aria-hidden="true"></span>
                                     </label>
-                                    <a href="#blog">Blog <span class="angle-dropdown" aria-hidden="true"></span></a>
+                                    <a id="a" href="#blog">View <span class="angle-dropdown"
+                                            aria-hidden="true"></span></a>
                                     <input type="checkbox" id="drop-4">
 
                                     <ul>
-                                        <li><a href="blog.html" class="drop-text">Blog</a></li>
-                                        <li><a href="blog-single.html" class="drop-text">Blog Details</a></li>
+                                        <li><a id="a" href="/viewProducts" class="drop-text">Products</a></li>
+                                        <li><a id="a" href="/viewOrders" class="drop-text">Orders</a></li>
+                                        <li><a id="a" href="/customerViewService" class="drop-text">Service Centre</a>
+                                        </li>
+                                        <li><a id="a" href="/viewBookings" class="drop-text">Bookings</a></li>
+                                        <li><a id="a" href="/viewStatus" class="drop-text">Request Status</a></li>
+
                                     </ul>
                                 </li>
+                                <li><a id="a" href="/viewCart">Cart</a></li>
                                 <li>
                                     <!-- Second Tier Drop Down -->
-                                    <label for="drop-5" class="toggle toogle-4">Shop <span class="angle-dropdown"
+                                    <label for="drop-5" class="toggle toogle-4">Add <span class="angle-dropdown"
                                             aria-hidden="true"></span>
                                     </label>
-                                    <a href="#blog">Shop <span class="angle-dropdown" aria-hidden="true"></span></a>
+                                    <a id="a" href="#blog">Add <span class="angle-dropdown"
+                                            aria-hidden="true"></span></a>
                                     <input type="checkbox" id="drop-5">
-
                                     <ul>
-                                        <li><a href="ecommerce.html" class="drop-text">Ecommerce</a></li>
-                                        <li><a href="ecommerce-single.html" class="drop-text">Ecommerce single</a></li>
-                                        <li><a href="ecommerce-cart.html" class="drop-text">Ecommerce cart</a></li>
+                                        <li><a id="a" href="/addFeedback" class="drop-text">Feedback</a></li>
+                                        <li><a id="a" href="/addSellingRequest" class="drop-text">Selling Request</a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li><a href="/logout">Logout</a></li>
+                                <li><a id="a" href="/logout">Logout</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </header>
         </section>
+
         <!-- Headers-4 block -->
         <!-- //header -->
         <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
@@ -322,7 +320,7 @@ RIGHT SIDEBAR TOGGLE SECTION
                     <div class="main-content-top">
                         <div class="main-content">
                             <!-- if logo is image enable this   
-                        <a class="logo" href="index.html">
+                        <a id="a" class="logo" href="index.html">
                             <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
                         </a> -->
                             <h4>Solar Power and Renewable energy service website</h4>
@@ -331,7 +329,7 @@ RIGHT SIDEBAR TOGGLE SECTION
                                 luctus et
                                 ultrices posuere cubilia Curae; Nullam porttitor felis quis nibh finibus, ut ornare nisl
                                 placerat.</p>
-                            <a href="about.html" class="btn">Read More</a>
+                            <a id="a" href="about.html" class="btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -353,32 +351,32 @@ RIGHT SIDEBAR TOGGLE SECTION
                             <div class="icon-bg-shape">
                                 <span class="fa fa-lightbulb-o" aria-hidden="true"></span>
                             </div>
-                            <h5><a href="single.html">A network of quality driven partners</a></h5>
-                            <a href="single.html" class="gomore">Learn More <span
+                            <h5><a id="a" href="single.html">A network of quality driven partners</a></h5>
+                            <a id="a" href="single.html" class="gomore">Learn More <span
                                     class="fa fa-long-arrow-right"></span></a>
                         </div>
                         <div class="features4-grid">
                             <div class="icon-bg-shape">
                                 <span class="fa fa-sun-o" aria-hidden="true"></span>
                             </div>
-                            <h5><a href="single.html">Residential solar energy service</a></h5>
-                            <a href="single.html" class="gomore">Learn More <span
+                            <h5><a id="a" href="single.html">Residential solar energy service</a></h5>
+                            <a id="a" href="single.html" class="gomore">Learn More <span
                                     class="fa fa-long-arrow-right"></span></a>
                         </div>
                         <div class="features4-grid">
                             <div class="icon-bg-shape">
                                 <span class="fa fa-lightbulb-o" aria-hidden="true"></span>
                             </div>
-                            <h5><a href="single.html">Fast, efficient paperless application</a></h5>
-                            <a href="single.html" class="gomore">Learn More <span
+                            <h5><a id="a" href="single.html">Fast, efficient paperless application</a></h5>
+                            <a id="a" href="single.html" class="gomore">Learn More <span
                                     class="fa fa-long-arrow-right"></span></a>
                         </div>
                         <div class="features4-grid">
                             <div class="icon-bg-shape">
                                 <span class="fa fa-sun-o" aria-hidden="true"></span>
                             </div>
-                            <h5><a href="single.html">Home Improvement solar service</a></h5>
-                            <a href="single.html" class="gomore">Learn More <span
+                            <h5><a id="a" href="single.html">Home Improvement solar service</a></h5>
+                            <a id="a" href="single.html" class="gomore">Learn More <span
                                     class="fa fa-long-arrow-right"></span></a>
                         </div>
                     </div>
@@ -398,24 +396,24 @@ RIGHT SIDEBAR TOGGLE SECTION
                     <h3 class="heading">Learn about our Energy Ecosystem</h3>
                     <div class="grids-content text-center">
                         <div class="column">
-                            <a href="single.html"><img src="{% static 'assets/images/panel.jpg' %}" alt=""
+                            <a id="a" href="single.html"><img src="{% static 'assets/images/panel.jpg' %}" alt=""
                                     class="img-responsive" /></a>
-                            <h4><a href="single.html">Solar panels</a></h4>
+                            <h4><a id="a" href="single.html">Solar panels</a></h4>
                         </div>
                         <div class="column">
-                            <a href="single.html"><img src="{% static 'assets/images/battery.jpg' %}" alt=""
+                            <a id="a" href="single.html"><img src="{% static 'assets/images/battery.jpg' %}" alt=""
                                     class="img-responsive" /></a>
-                            <h4><a href="single.html">Solar Batteries</a></h4>
+                            <h4><a id="a" href="single.html">Solar Batteries</a></h4>
                         </div>
                         <div class="column">
-                            <a href="single.html"><img src="{% static 'assets/images/charge.jpg' %}" alt=""
+                            <a id="a" href="single.html"><img src="{% static 'assets/images/charge.jpg' %}" alt=""
                                     class="img-responsive" /></a>
-                            <h4><a href="single.html">Charging point</a></h4>
+                            <h4><a id="a" href="single.html">Charging point</a></h4>
                         </div>
                         <div class="column">
-                            <a href="single.html"><img src="{% static 'assets/images/solarhome.jpg' %}" alt=""
+                            <a id="a" href="single.html"><img src="{% static 'assets/images/solarhome.jpg' %}" alt=""
                                     class="img-responsive" /></a>
-                            <h4><a href="single.html">Smart Home</a></h4>
+                            <h4><a id="a" href="single.html">Smart Home</a></h4>
                         </div>
                     </div>
                 </div>
@@ -480,7 +478,7 @@ RIGHT SIDEBAR TOGGLE SECTION
                             <div class="icon-bg-shape">
                                 <span class="fa fa-lightbulb-o" aria-hidden="true"></span>
                             </div>
-                            <a href="single.html">
+                            <a id="a" href="single.html">
                                 <h4>Optimized energy output</h4>
                             </a>
                             <p>Cras ultricies erat sit amet euismod commodo. Cras urna ligula, varius sed dolor maximus
@@ -491,7 +489,7 @@ RIGHT SIDEBAR TOGGLE SECTION
                             <div class="icon-bg-shape">
                                 <span class="fa fa-dollar" aria-hidden="true"></span>
                             </div>
-                            <a href="single.html">
+                            <a id="a" href="single.html">
                                 <h4>Save the most money</h4>
                             </a>
                             <p> Ultricies cras erat sit amet euismod commodo. Cras urna ligula, varius sed dolor maximus
@@ -501,7 +499,7 @@ RIGHT SIDEBAR TOGGLE SECTION
                             <div class="icon-bg-shape">
                                 <span class="fa fa-clock-o" aria-hidden="true"></span>
                             </div>
-                            <a href="single.html">
+                            <a id="a" href="single.html">
                                 <h4>Fastest Install time</h4>
                             </a>
                             <p>Amet cras ultricies erat sit euismod commodo. Cras urna ligula, varius sed dolor maximus
@@ -520,7 +518,8 @@ RIGHT SIDEBAR TOGGLE SECTION
                     <div class="form-main-cont-29">
                         <div class="content-29-form d-grid">
                             <div class="content-left">
-                                <h4 class="">Call <a href="tel:+7-800-999-800">+(21) 255 999 8888</a> now to get a free
+                                <h4 class="">Call <a id="a" href="tel:+7-800-999-800">+(21) 255 999 8888</a> now to get
+                                    a free
                                     quote or fill out the form</h4>
                                 <p>Pellentesque lacus velit, condimentum at pellentesque vulputate, rutrum et leo.
                                     Quisque
@@ -575,54 +574,55 @@ RIGHT SIDEBAR TOGGLE SECTION
                 <div class="wrapper">
                     <div class="footer17-top">
                         <div class="footer17-top-left1_sur">
-                            <h5><a href="index.html"><span class="fa fa-scribd" aria-hidden="true"></span>olar
+                            <h5><a id="a" href="index.html"><span class="fa fa-scribd" aria-hidden="true"></span>olar
                                     Service</a>
                             </h5>
                             <p>433 California St, Suite 300, San Francisco, CA 94104</p>
-                            <a href="tel:+(21) 255 999 8888">+(21) 255 999 8888</a>
+                            <a id="a" href="tel:+(21) 255 999 8888">+(21) 255 999 8888</a>
                             <ul class="footers-17_social">
-                                <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
-                                <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
-                                <li><a href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
-                                <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
+                                <li><a id="a" href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
+                                <li><a id="a" href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
+                                <li><a id="a" href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
+                                <li><a id="a" href="#url" class="instagram"><span class="fa fa-instagram"></span></a>
+                                </li>
                             </ul>
                         </div>
                         <div class="footer17-top-left2_sur">
                             <h6>Products</h6>
                             <ul>
-                                <li><a href="services.html">Solar system</a></li>
-                                <li><a href="services.html">Renewable energy</a></li>
-                                <li><a href="services.html">Home improvements</a></li>
-                                <li><a href="services.html">Solar Electric(PV)</a></li>
-                                <li><a href="services.html">Roof installation</a></li>
+                                <li><a id="a" href="services.html">Solar system</a></li>
+                                <li><a id="a" href="services.html">Renewable energy</a></li>
+                                <li><a id="a" href="services.html">Home improvements</a></li>
+                                <li><a id="a" href="services.html">Solar Electric(PV)</a></li>
+                                <li><a id="a" href="services.html">Roof installation</a></li>
                             </ul>
                         </div>
                         <div class="footer17-top-left3_sur">
                             <h6>Company</h6>
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="team.html">Join our team</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                                <li><a href="blog-2.html">Blog posts</a></li>
-                                <li><a href="ecommerce.html">Our Products</a></li>
+                                <li><a id="a" href="about.html">About Us</a></li>
+                                <li><a id="a" href="team.html">Join our team</a></li>
+                                <li><a id="a" href="contact.html">Contact us</a></li>
+                                <li><a id="a" href="blog-2.html">Blog posts</a></li>
+                                <li><a id="a" href="ecommerce.html">Our Products</a></li>
                             </ul>
                         </div>
                         <div class="footer17-top-left4_sur">
                             <h6>More links</h6>
                             <ul>
-                                <li><a href="services.html">What we do</a></li>
-                                <li><a href="faq.html">FAQ's - Help center</a></li>
-                                <li><a href="timeline.html">Our History</a></li>
-                                <li><a href="about.html">How it works</a></li>
+                                <li><a id="a" href="services.html">What we do</a></li>
+                                <li><a id="a" href="faq.html">FAQ's - Help center</a></li>
+                                <li><a id="a" href="timeline.html">Our History</a></li>
+                                <li><a id="a" href="about.html">How it works</a></li>
                             </ul>
                         </div>
                         <div class="footer17-top-left5_sur">
                             <h6>Legal </h6>
                             <ul>
-                                <li><a href="#url">Privacy policy</a></li>
-                                <li><a href="#url">Terms of use</a></li>
-                                <li><a href="#url">Licenses</a></li>
-                                <li><a href="#url">24/7 Support</a></li>
+                                <li><a id="a" href="#url">Privacy policy</a></li>
+                                <li><a id="a" href="#url">Terms of use</a></li>
+                                <li><a id="a" href="#url">Licenses</a></li>
+                                <li><a id="a" href="#url">24/7 Support</a></li>
                             </ul>
                         </div>
                     </div>

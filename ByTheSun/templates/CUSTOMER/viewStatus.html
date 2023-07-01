@@ -1,5 +1,6 @@
-{% extends 'ADMIN/adminBase.html' %}
+{% extends "CUSTOMER/customerBase.html" %}
 {% block header %}
+{% load static %}
 
 <style>
     th {
@@ -22,11 +23,12 @@
 {% endif %}
 <!-- Alert Message End -->
 
+
 <section class="w3l-breadcrumns">
     <div class="wrapper">
         <ul>
-            <li><a id="a" href="/adminHome">Home</a> /</li>
-            <li>Categories</li>
+            <li><a id="a" href="/customerHome">Home</a> /</li>
+            <li>Requests</li>
         </ul>
     </div>
 </section>
@@ -39,22 +41,34 @@
 
 <body>
     <div class="container">
-        <h1 align="center" class="m-5">CATEGORIES</h1>
+        <h1 align="center" class="m-5">Requests</h1>
         <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search...">
         <table class="table table-striped table-bordered" border="1">
             <thead>
                 <tr>
-                    <th style="text-align: center;">Category</th>
-                    <th style="text-align: center;">Action</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Unit</th>
+                    <th>Date</th>
+                    <th style="text-align: center;">Status</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
-                {% for i in categories %}
+                {% for i in viewData %}
                 <tr id="row{{ forloop.counter }}">
-                    <td style="text-align: center;">{{ i.category }}</td>
-                    <td align="center">
-                        <a href="/deleteService?id={{i.id}}" class="btn btn-style btn-outline-danger">DELETE</a>
+                    <td>{{ i.uid.name }}</td>
+                    <td>{{ i.uid.phone }}</td>
+                    <td>{{ i.unit }}</td>
+                    <td>{{ i.date }}</td>
+                    {% if i.status == 'Pending' %}
+                    <td style="text-align: center;">
+                        <h4 class="btn btn-outline-danger">{{ i.status }}</h4>
                     </td>
+                    {% else %}
+                    <td style="text-align: center;">
+                        <h4 class="btn btn-outline-success">{{ i.status }}</h4>
+                    </td>
+                    {% endif %}
                 </tr>
                 {% endfor %}
             </tbody>

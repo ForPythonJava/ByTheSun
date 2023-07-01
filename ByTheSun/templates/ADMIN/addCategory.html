@@ -1,6 +1,17 @@
 {% extends 'ADMIN/adminBase.html' %}
 {% block header %}
 
+<!-- Alert message -->
+{% if messages %}
+{% for i in messages %}
+<script>
+    alert("{{i}}");
+</script>
+{% endfor %}
+
+{% endif %}
+<!-- Alert Message End -->
+
 <!-- forms-17 -->
 <section class="forms-17">
     <div id="forms-17_sur">

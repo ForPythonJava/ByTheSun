@@ -1,4 +1,4 @@
-{% extends 'ADMIN/adminBase.html' %}
+{% extends 'SERVICE/serviceBase.html' %}
 {% block header %}
 
 <style>
@@ -22,11 +22,12 @@
 {% endif %}
 <!-- Alert Message End -->
 
+
 <section class="w3l-breadcrumns">
     <div class="wrapper">
         <ul>
-            <li><a id="a" href="/adminHome">Home</a> /</li>
-            <li>Categories</li>
+            <li><a id="a" href="/customerHome">Home</a> /</li>
+            <li>Bookings</li>
         </ul>
     </div>
 </section>
@@ -39,21 +40,40 @@
 
 <body>
     <div class="container">
-        <h1 align="center" class="m-5">CATEGORIES</h1>
+        <h1 align="center" class="m-5">BOOKINGS </h1>
         <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search...">
         <table class="table table-striped table-bordered" border="1">
             <thead>
                 <tr>
-                    <th style="text-align: center;">Category</th>
-                    <th style="text-align: center;">Action</th>
+                    <th>Shop Name</th>
+                    <th>Phone</th>
+                    <th>Problem</th>
+                    <th>Date</th>
+                    {% if bookData.status == 'Pending' %}
+                    <th width="300" style="text-align: center;">Action</th>
+                    {% else %}
+                    <th width="300" style="text-align: center;">Status</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody id="tableBody">
-                {% for i in categories %}
+                {% for i in bookData %}
                 <tr id="row{{ forloop.counter }}">
-                    <td style="text-align: center;">{{ i.category }}</td>
-                    <td align="center">
-                        <a href="/deleteService?id={{i.id}}" class="btn btn-style btn-outline-danger">DELETE</a>
+                    <td>{{ i.shopid.name }}</td>
+                    <td>{{ i.shopid.phone }}</td>
+                    <td>{{ i.problem }}</td>
+                    <td>{{ i.date }}</td>
+                    <td style="text-align: center;">
+                        {% if i.status == 'Pending' %}
+                        <div>
+                            <a href="/manageBooking?id={{i.id}}&status=Approved"
+                                class="btn btn-outline-success">APPROVE✔</a>
+                            <a href="/manageBooking?id={{i.id}}&status=Rejected" class="btn btn-outline-danger"> Reject❌
+                            </a>
+                        </div>
+                        {% else %}
+                        <h4 class="btn btn-outline-success">{{ i.status }}</h4>
+                        {% endif %}
                     </td>
                 </tr>
                 {% endfor %}

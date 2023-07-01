@@ -11,6 +11,17 @@
     }
 </style>
 
+<!-- Alert message -->
+{% if messages %}
+{% for i in messages %}
+<script>
+    alert("{{i}}");
+</script>
+{% endfor %}
+
+{% endif %}
+<!-- Alert Message End -->
+
 <section class="w3l-breadcrumns">
     <div class="wrapper">
         <ul>
