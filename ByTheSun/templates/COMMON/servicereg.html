@@ -254,13 +254,15 @@ RIGHT SIDEBAR TOGGLE SECTION
                         <div class="forms-17-form">
                             <div class="form-17-tp">
                                 <h6>Create Account</h6>
-                                <form action="#" method="post" class="signin-form">
+                                <form method="post" class="signin-form">
                                     {% csrf_token %}
                                     <div class="form-input">
                                         <input type="text" name="name" placeholder="Shop Name" required />
                                     </div>
                                     <div class="form-input">
-                                        <input type="email" name="email" placeholder="Email address" required />
+                                        <input type="email" name="email"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                            placeholder="Email address" required />
                                     </div>
                                     <div class="form-input">
                                         <input type="text" name="phone" placeholder="Phone" pattern="[6789][0-9]+"
